@@ -1,4 +1,4 @@
-import { ADMIN_ALL_USERS_FAIL, ADMIN_ALL_USERS_REQUEST, ADMIN_ALL_USERS_SUCCESS, USER_DETAILS_FAIL, USER_DETAILS_REQUEST, USER_DETAILS_SUCCESS, USER_REGISTER_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_SIGNIN_FAIL, USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNOUT, USER_UPDATE_PROFILE_FAIL, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_RESET, USER_UPDATE_PROFILE_SUCCESS } from '../constants/userConstants';
+import { USER_DETAILS_FAIL, USER_DETAILS_REQUEST, USER_DETAILS_SUCCESS, USER_REGISTER_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_SIGNIN_FAIL, USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNOUT, USER_UPDATE_PROFILE_FAIL, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_RESET, USER_UPDATE_PROFILE_SUCCESS } from '../constants/userConstants';
 
 export const userRegisterReducer = (state = {}, action) => {
     switch (action.type) {
@@ -42,6 +42,7 @@ export const userDetailsReducer = (state = { loading: true }, action) => {
 }
 
 export const userUpdateProfileReducer = (state = {}, action) => {
+    console.log('action', action);
     switch (action.type) {
         case USER_UPDATE_PROFILE_REQUEST:
             return { loading: true };
@@ -55,16 +56,3 @@ export const userUpdateProfileReducer = (state = {}, action) => {
             return state;
     }
 };
-
-export const adminAllUsersReducer = (state = {}, action) => {
-    switch (action.type) {
-        case ADMIN_ALL_USERS_REQUEST:
-            return { loading: true };
-        case ADMIN_ALL_USERS_SUCCESS:
-            return { loading: false, users: action.payload }
-        case ADMIN_ALL_USERS_FAIL:
-            return { loading: false, error: action.payload }
-        default:
-            return state;
-    }
-}

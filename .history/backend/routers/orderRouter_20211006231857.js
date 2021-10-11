@@ -11,9 +11,12 @@ orderRouter.get('/mine', isAuth, expressAsyncHandler(async (req, res) => {
 }));
 
 orderRouter.get('/all-orders', isAuth, expressAsyncHandler(async (req, res) => {
+    console.log("FIND orders", req);
+    // const orders = await Order.find({});
+    // res.send(orders);
 
-    Order.find({}).then(function (orders) {
-        res.send(orders);
+    Order.find({}).then(function (users) {
+        res.send(users);
     });
 }));
 

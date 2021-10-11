@@ -125,7 +125,7 @@ export const adminAllUsers = () => async (dispatch, getState) => {
     });
     const { userSignin: { userInfo } } = getState();
     try {
-        const { data } = await Axios.get('/api/users', {
+        const { data } = await Axios.get('/api/users/allUsers', {
             headers: { Authorization: `Bearer ${userInfo.token}` }
         });
         console.log("ALL USERS::::", data);

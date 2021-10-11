@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { signout } from './actions/userActions';
 import PrivateRoute from './components/privateRoute';
 import CartPage from './pages/CartPage';
@@ -13,17 +13,18 @@ import ProfilePage from './pages/ProfilePage';
 import RegisterPage from './pages/RegisterPage';
 import ShippingAddressPage from './pages/ShippingAddressPage';
 import SigninPage from './pages/SigninPage';
+import AdminHeader from './components/adminHeader/AdminHeader'
+import ClientHeader from './components/clientHeader/ClientHeader'
 import AdminRoute from './components/AdminRoute';
 import NewProductPage from './pages/NewProductPage';
 import MenageOrders from './pages/MenageOrders';
 import MenageOrderDetails from './pages/MenageOrderDetails';
 import Dashboard from './pages/Dashboard';
-import Users from './pages/admin/users/Users';
 
 function App() {
 
-  // const cart = useSelector(state => state.cart);
-  // const { cartItems } = cart;
+  const cart = useSelector(state => state.cart);
+  const { cartItems } = cart;
 
   //get userSignin from redux store
   const userSignin = useSelector((state) => state.userSignin);
@@ -33,9 +34,9 @@ function App() {
 
   const dispatch = useDispatch();
 
-  // const signoutHandler = () => {
-  //   dispatch(signout());
-  // }
+  const signoutHandler = () => {
+    dispatch(signout());
+  }
 
   return (
     <BrowserRouter>
@@ -83,7 +84,6 @@ function App() {
           <AdminRoute path="/productlist" component={NewProductPage}></AdminRoute>
           <AdminRoute path="/menageOrders" component={MenageOrders}></AdminRoute>
           <AdminRoute path="/orderDetails/:id" component={MenageOrderDetails}></AdminRoute>
-          <AdminRoute path="/userlist" component={Users}></AdminRoute>
           <Route path="/" component={HomePage} exact></Route>
         </main>
         <footer className="row center">

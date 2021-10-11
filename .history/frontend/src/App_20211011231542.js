@@ -18,7 +18,6 @@ import NewProductPage from './pages/NewProductPage';
 import MenageOrders from './pages/MenageOrders';
 import MenageOrderDetails from './pages/MenageOrderDetails';
 import Dashboard from './pages/Dashboard';
-import Users from './pages/admin/users/Users';
 
 function App() {
 
@@ -83,7 +82,6 @@ function App() {
           <AdminRoute path="/productlist" component={NewProductPage}></AdminRoute>
           <AdminRoute path="/menageOrders" component={MenageOrders}></AdminRoute>
           <AdminRoute path="/orderDetails/:id" component={MenageOrderDetails}></AdminRoute>
-          <AdminRoute path="/userlist" component={Users}></AdminRoute>
           <Route path="/" component={HomePage} exact></Route>
         </main>
         <footer className="row center">

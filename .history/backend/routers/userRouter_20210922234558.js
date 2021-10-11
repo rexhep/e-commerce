@@ -90,17 +90,4 @@ userRouter.put('/profile', isAuth, expressAsyncHandler(async (req, res) => {
     }
 }));
 
-// Get All Users
-userRouter.get('/', isAuth, expressAsyncHandler(async (req, res) => {
-    const users = await User.find({});
-
-    if (users) {
-        res.send(users);
-    } else {
-        res.status(404).send({
-            message: 'Users Not Found'
-        });
-    }
-}))
-
 export default userRouter;

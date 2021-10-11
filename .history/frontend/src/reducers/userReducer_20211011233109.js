@@ -61,9 +61,9 @@ export const adminAllUsersReducer = (state = {}, action) => {
         case ADMIN_ALL_USERS_REQUEST:
             return { loading: true };
         case ADMIN_ALL_USERS_SUCCESS:
-            return { loading: false, users: action.payload }
+            return { loading: false, error: action.payload };
         case ADMIN_ALL_USERS_FAIL:
-            return { loading: false, error: action.payload }
+            return {};
         default:
             return state;
     }

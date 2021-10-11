@@ -62,7 +62,7 @@ userRouter.get('/:id', expressAsyncHandler(async (req, res) => {
         res.send(user);
     } else {
         res.status(404).send({
-            message: 'User Not Found'
+            message: 'User5 Not Found'
         });
     }
 }));
@@ -85,13 +85,14 @@ userRouter.put('/profile', isAuth, expressAsyncHandler(async (req, res) => {
         })
     } else {
         res.status(404).send({
-            message: 'User Not Found'
+            message: 'User3 Not Found'
         });
     }
 }));
 
 // Get All Users
-userRouter.get('/', isAuth, expressAsyncHandler(async (req, res) => {
+userRouter.get('/all-users', isAuth, expressAsyncHandler(async (req, res) => {
+    console.log('REQ:::');
     const users = await User.find({});
 
     if (users) {

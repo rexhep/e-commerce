@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import { cartReducer } from './reducers/cartReducers';
 import { allOrdersReducer, orderCreateReducer, orderDeliveryChange, orderDetailsReducer, orderMineListReducer, orderPayReducer } from './reducers/orderReducers';
 import { productDetailsReducer, productListReducer, productRegisterReducer } from './reducers/productReducers';
-import { adminAllUsersReducer, userDetailsReducer, userRegisterReducer, userSigninReducer, userUpdateProfileReducer } from './reducers/userReducer';
+import { userDetailsReducer, userRegisterReducer, userSigninReducer, userUpdateProfileReducer } from './reducers/userReducer';
 
 // in store.js we add reducers
 
@@ -37,8 +37,7 @@ const reducer = combineReducers({
     updateUserProfile: userUpdateProfileReducer,
     registerProduct: productRegisterReducer,
     allOrderList: allOrdersReducer,
-    updateOrderDelivery: orderDeliveryChange,
-    allUsersAdminPanel: adminAllUsersReducer
+    updateOrderDelivery: orderDeliveryChange
 });
 
 // connect store to chrome devTools
