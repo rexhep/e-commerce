@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { makeStyles } from "@material-ui/core";
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Product from '../components/Product';
@@ -11,14 +10,7 @@ import Grid from '@mui/material/Grid';
 import ClientNavbar from '../components/clientHeader/ClientNavbar';
 import HeaderSlider from '../components/clientHeader/HeaderSlider';
 
-const useStyles = makeStyles((theme) => ({
-    customContainer: {
-        marginBottom: 80
-    }
-}));
-
 const HomePage = () => {
-    const classes = useStyles();
     const dispatch = useDispatch();
 
     const productList = useSelector(state => state.productList);
@@ -42,7 +34,7 @@ const HomePage = () => {
                     error ? (
                         <MessageBox variant="danger">{error}</MessageBox>
                     ) : (
-                        <Container maxWidth="lg" className={classes.customContainer}>
+                        <Container maxWidth="lg">
                             <Box sx={{ flexGrow: 1 }}>
                                 <Grid container spacing={2}>
                                     {products.length && products.map(product => (

@@ -78,7 +78,7 @@ export default function Users() {
 
 
     return (
-    <AdminPage>
+        <AdminPage>
         {loading ? (
       <LoadingBox></LoadingBox>
   ) : error ? (

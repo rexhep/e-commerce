@@ -1,13 +1,16 @@
 import Axios from 'axios';
+import { PayPalButton } from 'react-paypal-button-v2';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { detailsOrder } from '../actions/orderActions';
+import { Link } from 'react-router-dom';
+import { detailsOrder, payOrder } from '../actions/orderActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { ORDER_PAY_RESET } from '../constants/orderConstants';
 import OrderDetailsBox from '../components/OrderDetailsBox';
 
 export default function OrderScreen(props) {
+    console.log('PROPS', props);
     const orderId = props.match.params.id;
     const [sdkReady, setSdkReady] = useState(false);
 
@@ -16,7 +19,7 @@ export default function OrderScreen(props) {
     const { order, loading, error } = orderDetails;
 
     const orderPay = useSelector(state => state.orderPay);
-    const { success: successPay } = orderPay;
+    const { loading: loadingPay, error: errorPay, success: successPay } = orderPay;
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -50,6 +53,10 @@ export default function OrderScreen(props) {
             }
         }
     }, [dispatch, order, orderId, sdkReady, successPay]);
+
+    // const successPaymentHandler = (paymentResult) => {
+    //     dispatch(payOrder(order, paymentResult));
+    // };
 
     return loading ? (
         <LoadingBox></LoadingBox>

@@ -431,17 +431,6 @@ img.custom-image {
   margin: 0 auto;
   display: block;
   border: solid 1px;
-  border-radius: 0;
-}
-
-.product-details h1 {
-  text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
-}
-
-.product-details ul li {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
 }
 
 /* END PRODUCT DETAILS */

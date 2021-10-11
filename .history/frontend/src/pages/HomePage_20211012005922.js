@@ -13,7 +13,7 @@ import HeaderSlider from '../components/clientHeader/HeaderSlider';
 
 const useStyles = makeStyles((theme) => ({
     customContainer: {
-        marginBottom: 80
+        marginBottom: 20
     }
 }));
 

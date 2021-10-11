@@ -72,6 +72,7 @@ export const detailsUser = (userId) => async (dispatch, getState) => {
         const { data } = await Axios.get(`/api/users/${userId}`, {
             headers: { Authorization: `Beared ${userInfo.token}` }
         });
+        console.log('DATA::', data);
         dispatch({
             type: USER_DETAILS_SUCCESS,
             payload: data

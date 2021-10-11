@@ -44,9 +44,6 @@ const useStyles = makeStyles((theme) => ({
           background: orange[900],
           border: 'none !important'
         }
-      },
-      orderDetailsPage: {
-          padding: 20
       }
   }));
 
@@ -109,7 +106,7 @@ export default function OrderDetailsComponent({ props, allowPaying }) {
     ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
     ) : (
-        <div className={classes.orderDetailsPage}>
+        <div>
             <div>
                 <Button onClick={() => history.goBack()} className={`${classes.backButton}`} variant="contained">Back</Button>
             </div>

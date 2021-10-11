@@ -10,6 +10,7 @@ import ClientNavbar from '../components/clientHeader/ClientNavbar';
 
 const useStyles = makeStyles((theme) => ({
     backButton: {
+        // to make a red delete button
         color: theme.palette.primary.contrastText,
         background: orange[700],
         fontSize: theme.typography.h6.fontSize,

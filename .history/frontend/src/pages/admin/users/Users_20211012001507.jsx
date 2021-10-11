@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-import { makeStyles, Button } from "@material-ui/core";
 import Paper from '@mui/material/Paper';
 import { DataGrid } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,15 +9,7 @@ import LoadingBox from '../../../components/LoadingBox';
 import MessageBox from '../../../components/MessageBox';
 import PageTitle from '../../../components/PageTitle';
 
-const useStyles = makeStyles((theme) => ({
-    mainGrid: {
-        height: '100vh',
-        width: '100%',
-        fontSize: '14px'
-      }
-  }));
-
-  const allCols = () => (
+  const allCols = (classes, history) => (
     [
           {
             field: '_id',
@@ -59,16 +50,18 @@ const useStyles = makeStyles((theme) => ({
     ]
 );
 
-export default function Users() {
+export default function Users(props) {
     const classes = useStyles();
 
     const [pageSize, setPageSize] = useState(5);
 
-  const columns = allCols();
+  const columns = allCols(classes, props.history);
 
   const dispatch = useDispatch();
 
   const usersList = useSelector(state => state.allUsersAdminPanel);
+
+  console.log('USERS::::', usersList);
 
   const { loading, error, users } = usersList;
 
@@ -78,7 +71,7 @@ export default function Users() {
 
 
     return (
-    <AdminPage>
+        <AdminPage>
         {loading ? (
       <LoadingBox></LoadingBox>
   ) : error ? (

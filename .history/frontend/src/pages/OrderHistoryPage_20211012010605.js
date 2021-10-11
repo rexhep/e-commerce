@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, makeStyles } from '@material-ui/core';
-import { orange } from '@mui/material/colors';
+import { makeStyles } from '@material-ui/core';
 import { listOrderMine } from '../actions/orderActions';
 import ClientNavbar from '../components/clientHeader/ClientNavbar';
 import LoadingBox from '../components/LoadingBox';
@@ -10,19 +9,7 @@ import MessageBox from '../components/MessageBox';
 const useStyles = makeStyles((theme) => ({
     orderHistory: {
         padding: 20
-    },
-    detailsButton: {
-        color: theme.palette.primary.contrastText,
-        background: orange[700],
-        fontSize: theme.typography.h6.fontSize,
-        fontWeight: theme.typography.h6.fontWeight,
-        letterSpacing: theme.typography.h6.letterSpacing,
-
-        '&:hover': {
-            background: orange[900],
-            border: 'none !important'
-        }
-    },
+    }
 }));
 
 export default function OrderHistoryPage(props) {
@@ -72,7 +59,15 @@ export default function OrderHistoryPage(props) {
                                                     : 'No'}
                                             </td>
                                             <td>
-                                                <Button onClick={() => props.history.push(`/order/${order._id}`)} className={`${classes.detailsButton}`} variant="contained">Details</Button>
+                                                <button
+                                                    type="button"
+                                                    className="small"
+                                                    onClick={() => {
+                                                        props.history.push(`/order/${order._id}`);
+                                                    }}
+                                                >
+                                                    Details
+                                                </button>
                                             </td>
                                         </tr>
                                     ))}

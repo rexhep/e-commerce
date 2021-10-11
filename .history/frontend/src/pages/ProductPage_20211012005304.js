@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Button, makeStyles } from "@material-ui/core";
 import { orange } from '@mui/material/colors';
 import Rating from '../components/Rating';
+import { Link } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { detailsProduct } from '../actions/productActions';
@@ -10,6 +11,7 @@ import ClientNavbar from '../components/clientHeader/ClientNavbar';
 
 const useStyles = makeStyles((theme) => ({
     backButton: {
+        // to make a red delete button
         color: theme.palette.primary.contrastText,
         background: orange[700],
         fontSize: theme.typography.h6.fontSize,
@@ -25,9 +27,6 @@ const useStyles = makeStyles((theme) => ({
         height: '100vh',
         width: '100%',
         fontSize: '14px'
-    },
-    backToResult: {
-        margin: '20px 20px'
     }
 }));
 
@@ -58,10 +57,8 @@ export default function ProductPage(props) {
                         <MessageBox variant="danger">{error}</MessageBox>
                     ) : (
                         <div>
-                            <div className={classes.backToResult}>
-                                <Button onClick={() => props.history.push('/')} className={`${classes.backButton}`} variant="contained">Back to result</Button>
-                            </div>
-
+                            <Link to="/">Back to result</Link>
+                            <Button onClick={() => props.history.push('/')} className={`${classes.backButton}`} variant="contained">Edit</Button>
                             <div className="row top product-details">
                                 <div className="col-2 mr-20">
                                     <div className="product-details-image">

@@ -72,7 +72,16 @@ export default function OrderHistoryPage(props) {
                                                     : 'No'}
                                             </td>
                                             <td>
-                                                <Button onClick={() => props.history.push(`/order/${order._id}`)} className={`${classes.detailsButton}`} variant="contained">Details</Button>
+                                                {/* <button
+                                                    type="button"
+                                                    className="small"
+                                                    onClick={() => {
+                                                        props.history.push(`/order/${order._id}`);
+                                                    }}
+                                                >
+                                                    Details
+                                                </button> */}
+                                                <Button onClick={() => props.history.push(`/order/${order._id}`)} className={`${classes.backButton}`} variant="contained">Details</Button>
                                             </td>
                                         </tr>
                                     ))}
