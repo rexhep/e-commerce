@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { makeStyles } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import { useDispatch, useSelector } from 'react-redux';
 import Avatar from '@material-ui/core/Avatar';
@@ -10,16 +8,9 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import userProfile from '../../components/clientHeader/images/user-profile.png';
 import { signout } from '../../actions/userActions';
-
-const useStyles = makeStyles((theme) => ({
-  avatarProfileIcon: {
-    width: "25px", 
-    height: "25px"
-  }
-}));
+import { Link } from 'react-router-dom';
 
 const ClientHeader = () => {
-  const classes = useStyles();
   const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -43,9 +34,7 @@ const ClientHeader = () => {
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
         <Typography className="fontSize-avatar" sx={{ minWidth: 100 }}>{userInfo.name}</Typography>
         <IconButton className="avatar-icon" onClick={handleClick} size="small" sx={{ ml: 2 }}>
-            <Avatar sx={{ width: 30, height: 30 }}>
-              <img src={userProfile} className={classes.avatarProfileIcon} />
-            </Avatar>
+            <Avatar sx={{ width: 30, height: 30 }}>dfdf</Avatar>
           </IconButton>
       </Box>
       <Menu

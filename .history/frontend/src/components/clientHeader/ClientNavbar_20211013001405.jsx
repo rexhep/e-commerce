@@ -42,7 +42,7 @@ export default function ClientNavbar() {
         <div>
                 <header className={classes.rowHeader}>
                     <div>
-                        <Link className="brand" to="/">AP Fashion</Link>
+                        <Link className="brand" to="/">Amazona</Link>
                     </div>
                     <div className={classes.addToCartSector}>
                         <Link to="/cart">

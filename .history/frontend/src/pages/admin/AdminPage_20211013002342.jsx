@@ -155,10 +155,11 @@ export default function Dashboard(props) {
             <div className={classes.adminAside}>
                 <div className={classes.adminLayout}>
                     <div className={classes.brandAdmin}>
-                    <Link className="brand" to="/">AP Fashion</Link>
+                    AP Fashion
                     </div>
                     <div className={classes.layoutContainer}>
                     <MenuList>
+                        <MenuItem className={`${classes.menuList} fontSize`}><Link to="/">Home</Link></MenuItem>
                         <MenuItem className={`${classes.menuList} fontSize`}><Link to="/dashboard">Dashboard</Link></MenuItem>
                         <MenuItem className={`${classes.menuList} fontSize`}><Link to="/productlist">Add New Product</Link></MenuItem>
                         <MenuItem className={`${classes.menuList} fontSize`}><Link to="/menageOrders">Orders</Link></MenuItem>

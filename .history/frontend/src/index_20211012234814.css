@@ -44,7 +44,6 @@ main {
 footer {
   grid-area: footer;
   background-color: #3B82F6;
-  height: 50px;
   color: #fff
 }
 /* Common */

@@ -25,10 +25,9 @@ const useStyles = makeStyles((theme) => {
         checkoutButton: {
             color: theme.palette.primary.contrastText,
             background: orange[700],
-            fontSize: theme.typography.h5.fontSize,
+            fontSize: theme.typography.h6.fontSize,
             fontWeight: theme.typography.h6.fontWeight,
             letterSpacing: theme.typography.h6.letterSpacing,
-            width: '100%',
 
             '&:hover': {
                 background: orange[900],
@@ -151,7 +150,7 @@ export default function CartPage(props) {
                     <div className="card card-body">
                         <ul>
                             <li>
-                                <h2 className={classes.pageTitle}>
+                                <h2>
                                     Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $
                                     {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
                                 </h2>
@@ -165,6 +164,14 @@ export default function CartPage(props) {
                                 >
                                     Proceed to Checkout
                                 </Button>
+                                {/* <button
+                                    type="button"
+                                    onClick={checkoutHandler}
+                                    className="primary block"
+                                    disabled={cartItems.length === 0}
+                                >
+                                    Proceed to Checkout
+                                </button> */}
                             </li>
                         </ul>
                     </div>

@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
     orderTextFields: {
         '& label': {
+            // transform: "translate(14px, 7px) scale(1)",
             fontSize: '1.3rem',
             margin: 0
         }

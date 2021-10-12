@@ -32,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
     },
     orderTextFields: {
         '& label': {
-            fontSize: '1.3rem',
-            margin: 0
+            transform: "translate(14px, 7px) scale(1)",
+            fontSize: '1.3rem'
         }
     }
 }));
@@ -123,7 +123,7 @@ export default function NewProductPage() {
                     </div>
                     <div>
                         <TextField
-                            label="Description"
+                            label="description"
                             id="description"
                             name="description"
                             onChange={onHandleChange}
@@ -132,7 +132,7 @@ export default function NewProductPage() {
                     </div>
                     <div>
                         <TextField
-                            label="Price"
+                            label="price"
                             id="price"
                             name="price"
                             onChange={onHandleChange}
@@ -141,7 +141,7 @@ export default function NewProductPage() {
                     </div>
                     <div>
                         <TextField
-                            label="Count in Stock"
+                            label="countInStock"
                             id="countInStock"
                             name="countInStock"
                             onChange={onHandleChange}
@@ -150,7 +150,7 @@ export default function NewProductPage() {
                     </div>
                     <div>
                         <TextField
-                            label="Rating"
+                            label="rating"
                             id="rating"
                             name="rating"
                             onChange={onHandleChange}
@@ -159,7 +159,7 @@ export default function NewProductPage() {
                     </div>
                     <div>
                         <TextField
-                            label="Number Reviews"
+                            label="numReviews"
                             id="numReviews"
                             name="numReviews"
                             onChange={onHandleChange}

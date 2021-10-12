@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Button, makeStyles } from "@material-ui/core";
-import { red, orange } from '@mui/material/colors';
+import { red } from '@mui/material/colors';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../actions/cartActions';
@@ -22,19 +22,6 @@ const useStyles = makeStyles((theme) => {
                 border: 'none !important'
             }
         },
-        checkoutButton: {
-            color: theme.palette.primary.contrastText,
-            background: orange[700],
-            fontSize: theme.typography.h5.fontSize,
-            fontWeight: theme.typography.h6.fontWeight,
-            letterSpacing: theme.typography.h6.letterSpacing,
-            width: '100%',
-
-            '&:hover': {
-                background: orange[900],
-                border: 'none !important'
-            }
-        },
         mainGrid: {
             height: '100vh',
             width: '100%',
@@ -48,22 +35,7 @@ const useStyles = makeStyles((theme) => {
             flex: 1
         },
         pageTitle: {
-            fontSize: theme.typography.h4.fontSize,
-            fontFamily: theme.typography.h4.fontFamily
-        },
-        itemTitle: {
-            fontSize: theme.typography.h5.fontSize,
-            fontFamily: theme.typography.h5.fontFamily,
-            color: theme.palette.grey[900]
-        },
-        listItem: {
-            '& li:not(:last-child)': {
-                borderBottom: 'solid 1px',
-                paddingBottom: 10
-            }
-        },
-        imageSection: {
-            paddingRight: 10
+            fontSize: theme.typography.h3.fontSize
         }
     });
 });
@@ -105,11 +77,11 @@ export default function CartPage(props) {
                             Cart is empty. <Link to="/">Go Shopping</Link>
                         </MessageBox>
                     ) : (
-                        <ul className={classes.listItem}>
+                        <ul>
                             {cartItems.map((item) => (
                                 <li key={item.product}>
                                     <div className="row">
-                                        <div className={classes.imageSection}>
+                                        <div>
                                             <img
                                                 src={item.image}
                                                 alt={item.name}
@@ -117,7 +89,7 @@ export default function CartPage(props) {
                                             ></img>
                                         </div>
                                         <div className={`${classes.flexOne} min-30`}>
-                                            <Link to={`/product/${item.product}`} className={classes.itemTitle}>{item.name}</Link>
+                                            <Link to={`/product/${item.product}`}>{item.name}</Link>
                                         </div>
                                         <div className={`${classes.flexOne}`}>
                                             <select
@@ -151,20 +123,20 @@ export default function CartPage(props) {
                     <div className="card card-body">
                         <ul>
                             <li>
-                                <h2 className={classes.pageTitle}>
+                                <h2>
                                     Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $
                                     {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
                                 </h2>
                             </li>
                             <li>
-                                <Button
-                                    variant="contained"
+                                <button
+                                    type="button"
                                     onClick={checkoutHandler}
+                                    className="primary block"
                                     disabled={cartItems.length === 0}
-                                    className={classes.checkoutButton}
                                 >
                                     Proceed to Checkout
-                                </Button>
+                                </button>
                             </li>
                         </ul>
                     </div>

@@ -159,6 +159,7 @@ export default function Dashboard(props) {
                     </div>
                     <div className={classes.layoutContainer}>
                     <MenuList>
+                        <MenuItem className={`${classes.menuList} fontSize`}><Link to="/">Home</Link></MenuItem>
                         <MenuItem className={`${classes.menuList} fontSize`}><Link to="/dashboard">Dashboard</Link></MenuItem>
                         <MenuItem className={`${classes.menuList} fontSize`}><Link to="/productlist">Add New Product</Link></MenuItem>
                         <MenuItem className={`${classes.menuList} fontSize`}><Link to="/menageOrders">Orders</Link></MenuItem>

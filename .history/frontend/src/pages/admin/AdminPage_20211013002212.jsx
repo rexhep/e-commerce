@@ -60,8 +60,8 @@ const useStyles = makeStyles((theme) => ({
       msFlexPack: "center",
       justifyContent: "center",
       padding: "0 24px",
-      backgroundColor: '#1e88e5',
-      color: '#fff'
+      backgroundColor: '#1e88e5'
+      // boxShadow: "0 1px 9px -3px rgb(0 0 0 / 20%)"
     },
     layoutContainer: {
       height: "calc(100vh - 120px)",
@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
         msFlexPack: "justify",
         msFlexAlign: "center",
         justifyContent: "space-between",
-        backgroundColor: "#1e88e5"
+        backgroundColor: "#fff"
     },
     adminRightContainerHeader: {
       display: "flex",
@@ -98,7 +98,10 @@ const useStyles = makeStyles((theme) => ({
       msFlexAlign: "center",
       padding: 13,
       width: "auto",
-      flexDirection: "row-reverse"
+      flexDirection: "row-reverse",
+      '& .fontSize-avatar': {
+          color: 'black'
+      }
     },
     adminContent: {
       padding: "24px",
@@ -155,10 +158,11 @@ export default function Dashboard(props) {
             <div className={classes.adminAside}>
                 <div className={classes.adminLayout}>
                     <div className={classes.brandAdmin}>
-                    <Link className="brand" to="/">AP Fashion</Link>
+                    Brand
                     </div>
                     <div className={classes.layoutContainer}>
                     <MenuList>
+                        <MenuItem className={`${classes.menuList} fontSize`}><Link to="/">Home</Link></MenuItem>
                         <MenuItem className={`${classes.menuList} fontSize`}><Link to="/dashboard">Dashboard</Link></MenuItem>
                         <MenuItem className={`${classes.menuList} fontSize`}><Link to="/productlist">Add New Product</Link></MenuItem>
                         <MenuItem className={`${classes.menuList} fontSize`}><Link to="/menageOrders">Orders</Link></MenuItem>

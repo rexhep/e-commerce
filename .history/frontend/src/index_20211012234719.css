@@ -32,7 +32,7 @@ body {
 
 header {
   grid-area: header;
-  background-color: #3B82F6;
+  background-color: #1e88e5;
   height: 50px;
 }
 
@@ -43,8 +43,7 @@ main {
 
 footer {
   grid-area: footer;
-  background-color: #3B82F6;
-  height: 50px;
+  background-color: #1e88e5;
   color: #fff
 }
 /* Common */

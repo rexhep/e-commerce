@@ -14,19 +14,10 @@ const useStyles = makeStyles((theme) => ({
     },
     addToCartSector: {
         position: 'relative',
-        marginLeft: 'auto',
         '& .badge': {
             position: "absolute", 
             right: -15
         }
-    },
-    rowHeader: {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "flex-end",
-        flexWrap: "wrap",
-        rowGap: "10px",
-        columnGap: "2em"
     }
   }));
 
@@ -40,9 +31,9 @@ export default function ClientNavbar() {
 
     return (
         <div>
-                <header className={classes.rowHeader}>
+                <header className="row">
                     <div>
-                        <Link className="brand" to="/">AP Fashion</Link>
+                        <Link className="brand" to="/">Amazona</Link>
                     </div>
                     <div className={classes.addToCartSector}>
                         <Link to="/cart">

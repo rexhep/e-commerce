@@ -29,12 +29,6 @@ const useStyles = makeStyles((theme) => ({
         width: 200,
         height: 40,
         fontSize: `${theme.typography.h5.fontSize} !important`
-    },
-    orderTextFields: {
-        '& label': {
-            fontSize: '1.3rem',
-            margin: 0
-        }
     }
 }));
 
@@ -91,7 +85,7 @@ export default function NewProductPage() {
                         name="name"
                         id="name"
                         onChange={onHandleChange}
-                        className={classes.orderTextFields}
+                        className="test"
                         />
                     </div>
                     <div>
@@ -109,7 +103,6 @@ export default function NewProductPage() {
                             id="brand"
                             name="brand"
                             onChange={onHandleChange}
-                            className={classes.orderTextFields}
                         />
                     </div>
                     <div>
@@ -118,52 +111,46 @@ export default function NewProductPage() {
                             id="category"
                             name="category"
                             onChange={onHandleChange}
-                            className={classes.orderTextFields}
                         />
                     </div>
                     <div>
                         <TextField
-                            label="Description"
+                            label="description"
                             id="description"
                             name="description"
                             onChange={onHandleChange}
-                            className={classes.orderTextFields}
                         />
                     </div>
                     <div>
                         <TextField
-                            label="Price"
+                            label="price"
                             id="price"
                             name="price"
                             onChange={onHandleChange}
-                            className={classes.orderTextFields}
                         />
                     </div>
                     <div>
                         <TextField
-                            label="Count in Stock"
+                            label="countInStock"
                             id="countInStock"
                             name="countInStock"
                             onChange={onHandleChange}
-                            className={classes.orderTextFields}
                         />
                     </div>
                     <div>
                         <TextField
-                            label="Rating"
+                            label="rating"
                             id="rating"
                             name="rating"
                             onChange={onHandleChange}
-                            className={classes.orderTextFields}
                         />
                     </div>
                     <div>
                         <TextField
-                            label="Number Reviews"
+                            label="numReviews"
                             id="numReviews"
                             name="numReviews"
                             onChange={onHandleChange}
-                            className={classes.orderTextFields}
                         />
                     </div>
                     <div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
-import addToCartImage from '../../components/clientHeader/images/add-to-cart.png';
+import addToCartImage from '../../components/clientHeader/images/add-to-cart.png'
 import ClientHeader from '../clientHeader/ClientHeader';
 
 const useStyles = makeStyles((theme) => ({
@@ -11,22 +11,6 @@ const useStyles = makeStyles((theme) => ({
         '& a': {
             textTransform: 'uppercase'
         }
-    },
-    addToCartSector: {
-        position: 'relative',
-        marginLeft: 'auto',
-        '& .badge': {
-            position: "absolute", 
-            right: -15
-        }
-    },
-    rowHeader: {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "flex-end",
-        flexWrap: "wrap",
-        rowGap: "10px",
-        columnGap: "2em"
     }
   }));
 
@@ -40,13 +24,13 @@ export default function ClientNavbar() {
 
     return (
         <div>
-                <header className={classes.rowHeader}>
+                <header className="row">
                     <div>
-                        <Link className="brand" to="/">AP Fashion</Link>
+                        <Link className="brand" to="/">Amazona</Link>
                     </div>
-                    <div className={classes.addToCartSector}>
-                        <Link to="/cart">
-                        <img src={addToCartImage} alt="Add to cart" />
+                    <div>
+                        <Link to="/cart">Cart
+                        <img src={addToCartImage} />
                             {cartItems.length > 0 && (
                                 <span className="badge">{cartItems.length}</span>
                             )}

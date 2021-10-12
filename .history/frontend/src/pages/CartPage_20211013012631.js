@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => {
         checkoutButton: {
             color: theme.palette.primary.contrastText,
             background: orange[700],
-            fontSize: theme.typography.h5.fontSize,
+            fontSize: theme.typography.h6.fontSize,
             fontWeight: theme.typography.h6.fontWeight,
             letterSpacing: theme.typography.h6.letterSpacing,
             width: '100%',
@@ -165,6 +165,14 @@ export default function CartPage(props) {
                                 >
                                     Proceed to Checkout
                                 </Button>
+                                {/* <button
+                                    type="button"
+                                    onClick={checkoutHandler}
+                                    className="primary block"
+                                    disabled={cartItems.length === 0}
+                                >
+                                    Proceed to Checkout
+                                </button> */}
                             </li>
                         </ul>
                     </div>
