@@ -45,15 +45,6 @@ const HomePage = () => {
                     error ? (
                         <MessageBox variant="danger">{error}</MessageBox>
                     ) : (
-                        // <Container maxWidth="lg" className={classes.customContainer}>
-                        //     <Box sx={{ flexGrow: 1 }}>
-                        //         <Grid container spacing={2}>
-                        //             {products.length && products.map(product => (
-                        //                 <Product key={product._id} product={product} />
-                        //             ))}
-                        //         </Grid>
-                        //     </Box>
-                        // </Container>
                         <div className="search-filter-main">
                             <Provider>
                                 <SearchFilters />

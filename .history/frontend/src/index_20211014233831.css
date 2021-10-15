@@ -449,9 +449,7 @@ img.custom-image {
 
 /* SEARCH FILTER */
 .search-filter-main {
-  display: block;
-  float: left;
-  width: 100%;
+  display: 'block'
 }
 .search-filters {
   display: flex;
@@ -478,103 +476,6 @@ img.custom-image {
   font-style: italic;
   color: rgba(#000, 0.3);
 }
-
-.search-filters > div {
-  display: flex;
-  align-items: center;
-}
-
-.search-filters > p {
-    margin: 0 20px 0 0;
-    font-size: 14px;
-    font-style: italic;
-    font-weight: 400;
-    text-align: right;
-}
-
-.search-filters > span {
-  display: inline-block;
-  margin-left: 10px;
-  font-size: 12px;
-}
-
-
-.search-filters .slider {
-  min-width: 200px;
-  height: 30px;
-}
-  
-.search-filters .slider .track {
-    top: 50%;
-    height: 8px;
-    margin: -4px 0 0;
-    background: red;
-    border-radius: 99px;
-  }
-
-  .search-filters .slider .track-1 {
-    background:black
-  }
-
-  .search-filters .slider .thumb {
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    outline: none;
-    transform: translate(0, -50%);
-    background: red;
-    border-radius: 4px;
-    transition: 120ms background-color;
-  }
-
-  .search-filters .slider:before {
-      content: attr(aria-valuenow);
-      position: absolute;
-      left: 50%;
-      bottom: 100%;
-      font-size: 12px;
-      font-style: italic;
-      line-height: 20px;
-      padding: 0 5px;
-      color: #fff;
-      background: rgba(#000, 0.8);
-      border-radius: 4px;
-      opacity: 0;
-      transform: translate(-50%, -5px) scale(0.5);
-      transform-origin: center 25px;
-      transition: 120ms transform ease-in-out, 120ms opacity;
-      pointer-events: none;
-    }
-
-    .search-filters .slider:after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: 100%;
-      opacity: 0;
-      border: 3px solid transparent;
-      border-top-color: rgba(#000, 0.8);
-      transform: translate(-50%, 0) scale(0.5);
-      transform-origin: center bottom;
-      transition: 120ms transform ease-in-out, 120ms opacity;
-      pointer-events: none;
-    }
-
-    .search-filters .slider:hover,
-    .search-filters .slider.active {
-      background: green
-    }
-
-  .search-filters .slider:hover:before, .search-filters .slider:hover.active:before {
-      opacity: 1;
-      transform: translate(-50%, -5px) scale(1);
-    }
-
-  .search-filters .slider:hover:after, .search-filters .slider:hover:after {
-    opacity: 1;
-    transform: translate(-50%, 1px) scale(1);
-    }
 /* END SEARCH FILTER */
 
 /* KEYFRAMES */

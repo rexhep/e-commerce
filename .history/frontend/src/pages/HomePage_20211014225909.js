@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Provider } from "speedux";
 import { makeStyles } from "@material-ui/core";
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -39,28 +38,26 @@ const HomePage = () => {
                 <HeaderSlider />
             </div>
             <div>
+                <SearchFilters />
+
+                <ProductGridForFilter />
+            </div>
+            <div>
                 {loading ? (
                     <LoadingBox></LoadingBox>
                 ) :
                     error ? (
                         <MessageBox variant="danger">{error}</MessageBox>
                     ) : (
-                        // <Container maxWidth="lg" className={classes.customContainer}>
-                        //     <Box sx={{ flexGrow: 1 }}>
-                        //         <Grid container spacing={2}>
-                        //             {products.length && products.map(product => (
-                        //                 <Product key={product._id} product={product} />
-                        //             ))}
-                        //         </Grid>
-                        //     </Box>
-                        // </Container>
-                        <div className="search-filter-main">
-                            <Provider>
-                                <SearchFilters />
-
-                                <ProductGridForFilter />
-                            </Provider>
-                        </div>
+                        <Container maxWidth="lg" className={classes.customContainer}>
+                            <Box sx={{ flexGrow: 1 }}>
+                                <Grid container spacing={2}>
+                                    {products.length && products.map(product => (
+                                        <Product key={product._id} product={product} />
+                                    ))}
+                                </Grid>
+                            </Box>
+                        </Container>
 
                     )
                 }

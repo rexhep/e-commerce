@@ -449,9 +449,7 @@ img.custom-image {
 
 /* SEARCH FILTER */
 .search-filter-main {
-  display: block;
-  float: left;
-  width: 100%;
+  display: 'block'
 }
 .search-filters {
   display: flex;
