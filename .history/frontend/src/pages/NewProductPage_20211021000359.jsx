@@ -36,10 +36,7 @@ const useStyles = makeStyles((theme) => ({
             margin: 0
         },
         '& input': {
-            fontSize: '1.25rem',
-            '&:focus': {
-                outline: 'none'
-            }
+            fontSize: '1.188rem',
         }
     }
 }));

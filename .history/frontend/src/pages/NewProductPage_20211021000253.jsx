@@ -31,15 +31,10 @@ const useStyles = makeStyles((theme) => ({
         fontSize: `${theme.typography.h5.fontSize} !important`
     },
     orderTextFields: {
+        fontSize: 18,
         '& label': {
             fontSize: '1.3rem',
             margin: 0
-        },
-        '& input': {
-            fontSize: '1.25rem',
-            '&:focus': {
-                outline: 'none'
-            }
         }
     }
 }));

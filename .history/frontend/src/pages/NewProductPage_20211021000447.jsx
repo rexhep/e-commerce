@@ -37,9 +37,6 @@ const useStyles = makeStyles((theme) => ({
         },
         '& input': {
             fontSize: '1.25rem',
-            '&:focus': {
-                outline: 'none'
-            }
         }
     }
 }));
