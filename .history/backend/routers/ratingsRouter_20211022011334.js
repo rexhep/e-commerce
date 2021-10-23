@@ -1,0 +1,30 @@
+import express from 'express';
+import expressAsyncHandler from 'express-async-handler';
+import Ratings from '../models/ratingsModel.js';
+import Product from '../models/productModel.js';
+
+const ratingsRouter = express.Router();
+
+ratingsRouter.post('/', expressAsyncHandler(async (req, res) => {
+    console.log('TESLT', req.body);
+    const rating = await Ratings({
+        rating: req.body.rating,
+        product: req.body.id
+    });
+    const product = await Product.findById(req.body.id);
+    let prevRating = product.numReviews || 0;
+    console.log('prevRating', prevRating)
+    // // console.log('PRODUCT', product);
+
+    if (product) {
+        product.numReviews = prevRating + 1;
+        prevRating = product.numReviews;
+    }
+    const createRatings = await rating.save();
+    res.send({
+        rating: createRatings.rating,
+        product: createRatings.product
+    });
+}));
+
+export default ratingsRouter;
