@@ -36,11 +36,6 @@ const useStyles = makeStyles((theme) => ({
         '& a': {
             padding: "10px 10px"
         }
-    },
-    headerGridContainer: {
-        width: "100% !important", 
-        display: "block !important", 
-        paddingTop: 10
     }
   }));
 
@@ -67,7 +62,7 @@ export default function ClientNavbar() {
     return (
         <Container maxWidth="lg" className={classes.customContainer}>
             <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={2} className={classes.headerGridContainer}>
+                <Grid container spacing={2}>
                     <div>
                         <header className={classes.rowHeader}>
                             <div>

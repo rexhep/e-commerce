@@ -28,6 +28,8 @@ const FilterProductsComponent = ({ state, actions }) => {
     const { products } = productList;
     const { item, error, loading } = productCatList;
 
+    console.log('loading::', loading);
+
     useEffect(() => {
         actions.allProducts(item || products);
     }, [products, item]);

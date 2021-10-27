@@ -19,7 +19,7 @@ const HeaderSlider = () => {
        backgroundRepeat: 'no-repeat'
        }}>
          <div className="desc" style={{
-               right: '-5%',
+               right: '-29%',
                left: 'initial'
          }}>
            <h2 className="title" style={{

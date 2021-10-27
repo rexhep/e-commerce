@@ -28,6 +28,8 @@ const FilterProductsComponent = ({ state, actions }) => {
     const { products } = productList;
     const { item, error, loading } = productCatList;
 
+    console.log('loading::', loading);
+
     useEffect(() => {
         actions.allProducts(item || products);
     }, [products, item]);
@@ -36,7 +38,7 @@ const FilterProductsComponent = ({ state, actions }) => {
         if(state?.allProducts?.length) {
             setFilteredProducts(state.allProducts.slice().sort((a, b) => a.price - b.price));
         }
-    }, [state])
+    }, [])
 
     useEffect(() => {
         if (state.filters.query) {

@@ -38,8 +38,8 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     headerGridContainer: {
-        width: "100% !important", 
-        display: "block !important", 
+        width: "100%", 
+        display: "block", 
         paddingTop: 10
     }
   }));

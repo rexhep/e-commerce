@@ -2,7 +2,7 @@ import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import data from '../data.js';
 import Product from '../models/productModel.js';
-// import { isAdmin } from '../utils.js';
+import { isAdmin } from '../utils.js';
 import { v4 as uuid_v4 } from "uuid";
 import multer from 'multer';
 import _ from 'lodash';
@@ -38,6 +38,7 @@ const upload = multer({
 });
 
 productRouter.get('/', expressAsyncHandler(async (req, res) => {
+    console.log('PRODUC|TS');
     const products = await Product.find({});
     res.send(products);
 }));
@@ -58,7 +59,7 @@ productRouter.get('/:category', expressAsyncHandler(async (req, res) => {
     }
 }))
 
-productRouter.get('/details/:id', expressAsyncHandler(async (req, res) => {
+productRouter.get('/:id', expressAsyncHandler(async (req, res) => {
     console.log('PRODUC|TS');
     const product = await Product.findById(req.params.id);
     const rewards = await Ratings.find({ product: req.params.id });

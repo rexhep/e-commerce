@@ -2,7 +2,7 @@ import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import data from '../data.js';
 import Product from '../models/productModel.js';
-// import { isAdmin } from '../utils.js';
+import { isAdmin } from '../utils.js';
 import { v4 as uuid_v4 } from "uuid";
 import multer from 'multer';
 import _ from 'lodash';
@@ -58,25 +58,25 @@ productRouter.get('/:category', expressAsyncHandler(async (req, res) => {
     }
 }))
 
-productRouter.get('/details/:id', expressAsyncHandler(async (req, res) => {
+productRouter.get('/:id', expressAsyncHandler(async (req, res) => {
     console.log('PRODUC|TS');
     const product = await Product.findById(req.params.id);
-    const rewards = await Ratings.find({ product: req.params.id });
-    const ratingReverseMap = _.groupBy(rewards, 'rating');
-    const ratingObj = {};
-    _.range(1, 6).map(rating => {
-        if (ratingReverseMap[rating]) {
-            ratingObj[rating] = ratingReverseMap[rating].length;
-        } else {
-            ratingObj[rating] = 0;
-        }
-    });
-    const numerator = Object.keys(ratingObj)
-        .map(rating => ratingObj[rating] * +rating)
-        .reduce((acc, val) => acc + val, 0);
-    const denominator = Object.values(ratingObj).reduce((acc, val) => acc + +val, 0);
-    product.rating = ratingObj;
-    product.rating = Math.round(numerator / denominator);
+    // const rewards = await Ratings.find({ product: req.params.id });
+    // const ratingReverseMap = _.groupBy(rewards, 'rating');
+    // const ratingObj = {};
+    // _.range(1, 6).map(rating => {
+    //     if (ratingReverseMap[rating]) {
+    //         ratingObj[rating] = ratingReverseMap[rating].length;
+    //     } else {
+    //         ratingObj[rating] = 0;
+    //     }
+    // });
+    // const numerator = Object.keys(ratingObj)
+    //     .map(rating => ratingObj[rating] * +rating)
+    //     .reduce((acc, val) => acc + val, 0);
+    // const denominator = Object.values(ratingObj).reduce((acc, val) => acc + +val, 0);
+    // product.rating = ratingObj;
+    // product.rating = Math.round(numerator / denominator);
 
 
     if (product) {

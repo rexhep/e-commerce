@@ -57,7 +57,7 @@ export default function Product({ product }) {
                                 alt: '',
                                 src: product.image[0].path,
                                 width: 500,
-                                height: 800
+                                height: 1200
                             },
                             enlargedImageContainerClassName: "test",
                             enlargedImageContainerStyle: {

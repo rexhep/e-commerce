@@ -40,7 +40,7 @@ body {
 
 header {
   grid-area: header;
-  background-color: #fff;
+  background-color: #3B82F6;
   height: 50px;
 }
 
@@ -134,14 +134,14 @@ button.small {
 
 /* Header */
 header {
-  color: #000;
+  color: #fff;
   padding: 1rem;
 }
 header div a {
-  color: #000;
+  color: #fff;
 }
 a.brand {
-  color: #000;
+  color: white;
   font-size: 3rem;
   font-weight: bold;
 }
@@ -212,7 +212,6 @@ img.custom-image {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%); /* for IE 9 */
   -webkit-transform: translate(-50%, -50%); /* for Safari */
-  max-width: 500px;
 }
 
 .slider-cover .desc h2.title {
@@ -221,8 +220,6 @@ img.custom-image {
   text-align: center;
   font-weight: 700;
   font-size: 60px;
-  text-transform: uppercase;
-  margin-bottom: 0;
 }
 
 .slider-cover .desc p {
@@ -410,7 +407,7 @@ img.custom-image {
   color: #333 !important;
 }
 .fontSize-avatar {
-  color: #000;
+  color: #fff;
   font-size: 1.6rem !important;
 }
 

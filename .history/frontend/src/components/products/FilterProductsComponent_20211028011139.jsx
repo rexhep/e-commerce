@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { makeStyles } from "@material-ui/core";
@@ -16,8 +15,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const FilterProductsComponent = ({ state, actions }) => {
-    const classes = useStyles();
-    const dispatch = useDispatch();
+    const classes = useStyles();;
     const productList = useSelector(state => state.productList);
     const productCatList = useSelector(state =>  {
         return state.categoryOfProducts
@@ -25,8 +23,8 @@ const FilterProductsComponent = ({ state, actions }) => {
     console.log('productCatList::', productCatList);
     const [filteredProducts, setFilteredProducts] = useState();
 
-    const { products } = productList;
-    const { item, error, loading } = productCatList;
+    const { products, error, loading } = productList;
+    const { item } = productCatList;
 
     useEffect(() => {
         actions.allProducts(item || products);

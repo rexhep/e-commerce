@@ -20,17 +20,22 @@ const FilterProductsComponent = ({ state, actions }) => {
     const dispatch = useDispatch();
     const productList = useSelector(state => state.productList);
     const productCatList = useSelector(state =>  {
+        console.log('productCat::', state);
         return state.categoryOfProducts
     });
     console.log('productCatList::', productCatList);
     const [filteredProducts, setFilteredProducts] = useState();
 
-    const { products } = productList;
-    const { item, error, loading } = productCatList;
+    const { products, error, loading } = productList;
+    const { item } = productCatList;
+
+    console.log('length::', products?.length);
 
     useEffect(() => {
         actions.allProducts(item || products);
     }, [products, item]);
+
+    console.log('state::', state);
 
     useEffect(() => {
         if(state?.allProducts?.length) {

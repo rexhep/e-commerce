@@ -13,7 +13,7 @@ import { productRatings } from '../../actions/ratingsAction';
 
 const useStyles = makeStyles((theme) => ({
     imageMagnifyImg: {
-        height: "370px !important",
+        height: "550px !important",
         objectFit: "cover",
         objectPosition: "50% 50%"
     },
@@ -56,8 +56,8 @@ export default function Product({ product }) {
                             largeImage: {
                                 alt: '',
                                 src: product.image[0].path,
-                                width: 500,
-                                height: 800
+                                width: 1200,
+                                height: 1800
                             },
                             enlargedImageContainerClassName: "test",
                             enlargedImageContainerStyle: {

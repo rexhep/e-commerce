@@ -25,8 +25,10 @@ const FilterProductsComponent = ({ state, actions }) => {
     console.log('productCatList::', productCatList);
     const [filteredProducts, setFilteredProducts] = useState();
 
-    const { products } = productList;
-    const { item, error, loading } = productCatList;
+    const { products, error, loading } = productList;
+    const { item } = productCatList;
+
+    console.log('loading::', loading);
 
     useEffect(() => {
         actions.allProducts(item || products);

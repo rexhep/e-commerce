@@ -40,7 +40,7 @@ body {
 
 header {
   grid-area: header;
-  background-color: #fff;
+  background-color: #3B82F6;
   height: 50px;
 }
 
@@ -134,14 +134,14 @@ button.small {
 
 /* Header */
 header {
-  color: #000;
+  color: #fff;
   padding: 1rem;
 }
 header div a {
-  color: #000;
+  color: #fff;
 }
 a.brand {
-  color: #000;
+  color: white;
   font-size: 3rem;
   font-weight: bold;
 }
@@ -212,7 +212,6 @@ img.custom-image {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%); /* for IE 9 */
   -webkit-transform: translate(-50%, -50%); /* for Safari */
-  max-width: 500px;
 }
 
 .slider-cover .desc h2.title {
@@ -220,9 +219,6 @@ img.custom-image {
   color: #fff;
   text-align: center;
   font-weight: 700;
-  font-size: 60px;
-  text-transform: uppercase;
-  margin-bottom: 0;
 }
 
 .slider-cover .desc p {
@@ -231,6 +227,81 @@ img.custom-image {
   text-align: center;
   font-weight: 300;
 }
+
+/* SLICK SLIDER */
+.home-slider {
+  margin: 0 auto;
+  padding: 40px;
+  width: 80%;
+  color: #333;
+  background: #ccc;
+}
+.variable-width .slick-slide p {
+  background: blue;
+  height: 100px;
+  color: #fff;
+  margin: 5px;
+  line-height: 100px;
+  text-align: center;
+}
+.center .slick-center {
+  color: #e67e22;
+  opacity: 1;
+  transform: scale(1.08);
+}
+.center {
+  opacity: 0.8;
+  transition: all 300ms ease;
+}
+.content {
+  padding: 20px;
+  margin: auto;
+  width: 90%;
+}
+.slick-slide .image {
+  padding: 10px;
+}
+.slick-slide img {
+  border: 5px solid #fff;
+  display: block;
+  margin: auto;
+}
+.slick-slide img.slick-loading {
+  border: 0;
+}
+.slick-slider {
+  margin: 30px auto 50px;
+}
+.slick-dots {
+  margin-left: 0;
+}
+.slick-thumb {
+  bottom: -45px;
+}
+@media (max-width: 768px) {
+  .center {
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+  .center .slick-center {
+    color: #e67e22;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .center {
+    opacity: 0.8;
+    transform: scale(0.95);
+    transition: all 300ms ease;
+  }
+}
+.slick-arrow {
+  background-color: grey;
+  /* color: black; */
+}
+.slick-arrow:hover {
+  background-color: grey;
+}
+/* END SLICK SLIDER */
 
 
 /* Card */
@@ -410,7 +481,7 @@ img.custom-image {
   color: #333 !important;
 }
 .fontSize-avatar {
-  color: #000;
+  color: #fff;
   font-size: 1.6rem !important;
 }
 

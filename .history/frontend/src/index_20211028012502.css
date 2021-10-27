@@ -40,7 +40,7 @@ body {
 
 header {
   grid-area: header;
-  background-color: #fff;
+  background-color: #3B82F6;
   height: 50px;
 }
 
@@ -410,7 +410,7 @@ img.custom-image {
   color: #333 !important;
 }
 .fontSize-avatar {
-  color: #000;
+  color: #fff;
   font-size: 1.6rem !important;
 }
 

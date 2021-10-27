@@ -58,7 +58,7 @@ productRouter.get('/:category', expressAsyncHandler(async (req, res) => {
     }
 }))
 
-productRouter.get('/details/:id', expressAsyncHandler(async (req, res) => {
+productRouter.get('d/:id', expressAsyncHandler(async (req, res) => {
     console.log('PRODUC|TS');
     const product = await Product.findById(req.params.id);
     const rewards = await Ratings.find({ product: req.params.id });
