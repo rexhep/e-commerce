@@ -108,7 +108,7 @@ export default function CartPage(props) {
                                 <li key={item.product}>
                                     <div className="row">
                                         <div className={classes.imageSection}>
-                                            {console.log('ITEM::', cartItems)}
+                                            {console.log('ITEM::', item)}
                                             <img
                                                 src={item.image[0].path}
                                                 alt={item.name}

@@ -16,11 +16,12 @@ const HeaderSlider = () => {
       //  backgroundAttachment: 'fixed',
       //  backgrounSsize: 'auto 100%',
       //  backgroundPosition: 'center',
-       backgroundRepeat: 'no-repeat',
-       backgroundSize: "contain", 
-       backgroundPositionX: "70%"
+       backgroundRepeat: 'no-repeat'
        }}>
-         <div className="desc">
+         <div className="desc" style={{
+               right: '20%',
+               left: 'initial'
+         }}>
            <h2 className="title" style={{
              color: '#000'
            }}>Welcome to our page</h2>

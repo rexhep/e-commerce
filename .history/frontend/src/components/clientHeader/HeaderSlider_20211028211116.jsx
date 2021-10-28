@@ -20,7 +20,10 @@ const HeaderSlider = () => {
        backgroundSize: "contain", 
        backgroundPositionX: "70%"
        }}>
-         <div className="desc">
+         <div className="desc" style={{
+               right: '20%',
+               left: 'initial'
+         }}>
            <h2 className="title" style={{
              color: '#000'
            }}>Welcome to our page</h2>
