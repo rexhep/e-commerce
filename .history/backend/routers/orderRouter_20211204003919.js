@@ -1,7 +1,10 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import Order from '../models/orderModel.js';
-import { isAuth, isAdmin } from '../utils.js';
+import { 
+    isAuth,
+    //  isAdmin 
+    } from '../utils.js';
 
 const orderRouter = express.Router();
 
@@ -10,7 +13,7 @@ orderRouter.get('/mine', isAuth, expressAsyncHandler(async (req, res) => {
     res.send(orders);
 }));
 
-orderRouter.get('/all-orders', isAuth, expressAsyncHandler(async (req, res) => {
+orderRouter.get('/all-orders', expressAsyncHandler(async (req, res) => {
     // console.log('IS ADMIN', isAdmin());
 
     Order.find({}).then(function (orders) {
@@ -56,7 +59,7 @@ orderRouter.get('/:id', isAuth, expressAsyncHandler(async (req, res) => {
 }));
 
 //Change order delivery
-orderRouter.put('/:id', isAuth, expressAsyncHandler(async (req, res) => {
+orderRouter.put('/delivery/:id', isAuth, expressAsyncHandler(async (req, res) => {
     const order = await Order.findById(req.params.id);
     if (order) {
         order.isDelivered = req.body.isDelivered || order.isDelivered;

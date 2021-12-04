@@ -179,7 +179,7 @@ export default function OrderDetailsComponent({ props, allowPaying }) {
                                                 <div>
                                                     {console.log('ITEM:::', item)}
                                                     <img
-                                                        src={item.image[0]}
+                                                        src={item.image[0].path}
                                                         alt={item.name}
                                                         className="small"
                                                     ></img>

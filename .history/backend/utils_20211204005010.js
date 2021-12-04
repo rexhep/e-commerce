@@ -41,7 +41,7 @@ export const isAuth = (req, res, next) => {
 export const isAdmin = (req, res, next) => {
     console.log('REQUEST::', req.headers.authorization);
     // if (req.headers.user && req.headers.user.isAdmin)
-    if (req.headers.user && req.headers.user.isAdmin) {
+    if if (req.headers.user && req.headers.user.isAdmin) {
         next();
     } else {
         res.status(401).send({

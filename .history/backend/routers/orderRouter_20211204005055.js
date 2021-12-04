@@ -11,7 +11,7 @@ orderRouter.get('/mine', isAuth, expressAsyncHandler(async (req, res) => {
 }));
 
 orderRouter.get('/all-orders', isAuth, expressAsyncHandler(async (req, res) => {
-    // console.log('IS ADMIN', isAdmin());
+    console.log('IS ADMIN', isAdmin());
 
     Order.find({}).then(function (orders) {
         res.send(orders);

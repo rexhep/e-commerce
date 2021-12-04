@@ -112,7 +112,7 @@ export const menageOrders = () => async (dispatch, getState) => {
     try {
         console.log('ALL ORDER TOKEN', userInfo);
         const { data } = await Axios.get('/api/orders/all-orders', {
-            headers: { Authorization: `Bearer ${userInfo.token}` }
+            headers: { user: `Bearer ${userInfo.token}` }
         });
         console.log("DATA::::", data);
         dispatch({ type: MENAGE_ORDERS_SUCCESS, payload: data });

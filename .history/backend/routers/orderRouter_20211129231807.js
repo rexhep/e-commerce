@@ -1,7 +1,7 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import Order from '../models/orderModel.js';
-import { isAuth, isAdmin } from '../utils.js';
+import { isAuth } from '../utils.js';
 
 const orderRouter = express.Router();
 
@@ -10,8 +10,7 @@ orderRouter.get('/mine', isAuth, expressAsyncHandler(async (req, res) => {
     res.send(orders);
 }));
 
-orderRouter.get('/all-orders', isAuth, expressAsyncHandler(async (req, res) => {
-    // console.log('IS ADMIN', isAdmin());
+orderRouter.get('/all-orders', expressAsyncHandler(async (req, res) => {
 
     Order.find({}).then(function (orders) {
         res.send(orders);

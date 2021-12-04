@@ -135,7 +135,7 @@ export const changeOrderDelivery = (orderId, value) => async (dispatch, getState
     });
     const { userSignin: { userInfo } } = getState();
     try {
-        const { data } = await Axios.put(`/api/orders/${orderId}`, { isDelivered: value, deliveredAt: Date().toLocaleString() }, {
+        const { data } = await Axios.put(`/api/orderaaaas/${orderId}`, { isDelivered: value, deliveredAt: Date().toLocaleString() }, {
             headers: { Authorization: `Bearer ${userInfo.token}` }
         });
         console.log("DATA::::", data);

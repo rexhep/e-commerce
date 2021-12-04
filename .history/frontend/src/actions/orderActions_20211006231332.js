@@ -110,7 +110,6 @@ export const menageOrders = () => async (dispatch, getState) => {
     });
     const { userSignin: { userInfo } } = getState();
     try {
-        console.log('ALL ORDER TOKEN', userInfo);
         const { data } = await Axios.get('/api/orders/all-orders', {
             headers: { Authorization: `Bearer ${userInfo.token}` }
         });

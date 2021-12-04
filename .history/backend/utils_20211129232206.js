@@ -18,6 +18,7 @@ export const generateToken = (user) => {
 
 // create midleware to authenticate user request
 export const isAuth = (req, res, next) => {
+    console.log('REQUEST', req.headers);
     const authorization = req.headers.authorization;
     if (authorization) {
         const token = authorization.slice(7, authorization.length); // Bearer XXXXtoken value
@@ -39,9 +40,9 @@ export const isAuth = (req, res, next) => {
 }
 
 export const isAdmin = (req, res, next) => {
-    console.log('REQUEST::', req.headers.authorization);
+    console.log('req::', req.user);
     // if (req.headers.user && req.headers.user.isAdmin)
-    if (req.headers.user && req.headers.user.isAdmin) {
+    if (req.headers.user) {
         next();
     } else {
         res.status(401).send({
