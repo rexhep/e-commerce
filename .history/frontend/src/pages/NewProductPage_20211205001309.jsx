@@ -51,7 +51,6 @@ export default function NewProductPage() {
     const classes = useStyles();
     const [product, setProduct] = useState();
     const [files, setFiles] = useState([]);
-    const [category, setCategory] = useState('');
 
     const dispatch = useDispatch();
 
@@ -64,21 +63,14 @@ export default function NewProductPage() {
 
     }, [files, product]);
 
-    const onCategoryChange = async (e) => {
-        setCategory(e.target.value);
-    }
-
     const onHandleChange = async (e) => {
         const value = e.target.value;
-        console.log('EVEMT::', e.target.value);
 
         setProduct({
             ...product,
           [e.target.name]: value
         });
       };
-
-      console.log('PRODUCT', product);
 
     const onHandleSubmit = useCallback((e) => {
         e.preventDefault();
@@ -92,7 +84,7 @@ export default function NewProductPage() {
         // data.append('file', files);
         data.append('name', product.name);
         data.append('brand', product.brand);
-        data.append('category', category);
+        data.append('category', product.category);
         data.append('description', product.description);
         data.append('price', product.price);
         data.append('countInStock', product.countInStock);
@@ -144,23 +136,20 @@ export default function NewProductPage() {
                             className={classes.orderTextFields}
                         />
                     </div> */}
-                    <div>
-                        <FormControl fullWidth>
-                            <InputLabel id="category">Category</InputLabel>
-                            <Select
-                                labelId="category"
-                                id="category"
-                                // value={age}
-                                label="Category"
-                                onChange={onCategoryChange}
-                                className={classes.orderTextFields}
-                            >
-                                <MenuItem value={'tshirt'} >Tshirt</MenuItem>
-                                <MenuItem value={'dress'}>Dress</MenuItem>
-                                <MenuItem value={'coat'}>Coat</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </div>
+                    <FormControl fullWidth>
+                        <InputLabel id="category">Age</InputLabel>
+                        <Select
+                            labelId="category"
+                            id="category"
+                            value={age}
+                            label="Age"
+                            onChange={onHandleChange}
+                        >
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                    </FormControl>
                     <div>
                         <TextField
                             label="Description"

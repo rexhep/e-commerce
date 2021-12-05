@@ -39,12 +39,50 @@ const upload = multer({
 
 productRouter.get('/', expressAsyncHandler(async (req, res) => {
     const products = await Product.find({});
+
+    const test = products.map(({ _id }) => _id);
+
+    const rewards = await Ratings.find({ product: test });
+    const ratingReverseMap = _.groupBy(rewards, 'rating');
+    const ratingObj = {};
+    _.range(1, 6).map(rating => {
+        if (ratingReverseMap[rating]) {
+            ratingObj[rating] = ratingReverseMap[rating].length;
+        } else {
+            ratingObj[rating] = 0;
+        }
+    });
+    const numerator = Object.keys(ratingObj)
+        .map(rating => ratingObj[rating] * +rating)
+        .reduce((acc, val) => acc + val, 0);
+    const denominator = Object.values(ratingObj).reduce((acc, val) => acc + +val, 0);
+    const test2 = products.map((result) => result);
+    test2.rating = ratingObj;
+    test2.rating = Math.round(numerator / denominator);
+
+    console.log('test2::', ratingReverseMap);
     res.send(products);
 }));
 
 productRouter.get('/details/:id', expressAsyncHandler(async (req, res) => {
-    
+    console.log('PRODUC|TS');
     const product = await Product.findById(req.params.id);
+    const rewards = await Ratings.find({ product: req.params.id });
+    const ratingReverseMap = _.groupBy(rewards, 'rating');
+    const ratingObj = {};
+    _.range(1, 6).map(rating => {
+        if (ratingReverseMap[rating]) {
+            ratingObj[rating] = ratingReverseMap[rating].length;
+        } else {
+            ratingObj[rating] = 0;
+        }
+    });
+    const numerator = Object.keys(ratingObj)
+        .map(rating => ratingObj[rating] * +rating)
+        .reduce((acc, val) => acc + val, 0);
+    const denominator = Object.values(ratingObj).reduce((acc, val) => acc + +val, 0);
+    product.rating = ratingObj;
+    product.rating = Math.round(numerator / denominator);
 
 
     if (product) {
@@ -71,7 +109,24 @@ productRouter.get('/:category', expressAsyncHandler(async (req, res) => {
 }));
 
 productRouter.get('/cart/:id', expressAsyncHandler(async (req, res) => {
+    console.log('PRODUC|TS');
     const product = await Product.findById(req.params.id);
+    const rewards = await Ratings.find({ product: req.params.id });
+    const ratingReverseMap = _.groupBy(rewards, 'rating');
+    const ratingObj = {};
+    _.range(1, 6).map(rating => {
+        if (ratingReverseMap[rating]) {
+            ratingObj[rating] = ratingReverseMap[rating].length;
+        } else {
+            ratingObj[rating] = 0;
+        }
+    });
+    const numerator = Object.keys(ratingObj)
+        .map(rating => ratingObj[rating] * +rating)
+        .reduce((acc, val) => acc + val, 0);
+    const denominator = Object.values(ratingObj).reduce((acc, val) => acc + +val, 0);
+    product.rating = ratingObj;
+    product.rating = Math.round(numerator / denominator);
 
 
     if (product) {

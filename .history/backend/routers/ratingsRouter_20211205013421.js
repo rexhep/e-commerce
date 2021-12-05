@@ -6,21 +6,17 @@ import Product from '../models/productModel.js';
 const ratingsRouter = express.Router();
 
 ratingsRouter.post('/', expressAsyncHandler(async (req, res) => {
-    let count = 0;
     const rating = await Ratings({
         rating: req.body.rating,
-        product: req.body.id,
-        numReviews: count++
+        product: req.body.id
     });
-    
     const product = await Product.findById(req.body.id);
-    const createRatings = await rating.save();
     if (product) {
-        product.numReviews = product.numReviews === 'undefined' ? 0 : product.numReviews + 1;
-        product.rating = createRatings.rating;
+        product.numReviews = product.numReviews + 1;
+        product.rating = createRatings.rating,
     }
     product.save();
-    
+    const createRatings = await rating.save();
     res.send({
         rating: createRatings.rating,
         product: createRatings.product

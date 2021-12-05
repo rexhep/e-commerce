@@ -15,6 +15,8 @@ ratingsRouter.post('/', expressAsyncHandler(async (req, res) => {
     
     const product = await Product.findById(req.body.id);
     const createRatings = await rating.save();
+    console.log('BOYD product', product.numReviews);
+    count = rating.numReviews;
     if (product) {
         product.numReviews = product.numReviews === 'undefined' ? 0 : product.numReviews + 1;
         product.rating = createRatings.rating;

@@ -51,7 +51,6 @@ export default function NewProductPage() {
     const classes = useStyles();
     const [product, setProduct] = useState();
     const [files, setFiles] = useState([]);
-    const [category, setCategory] = useState('');
 
     const dispatch = useDispatch();
 
@@ -63,10 +62,6 @@ export default function NewProductPage() {
         });
 
     }, [files, product]);
-
-    const onCategoryChange = async (e) => {
-        setCategory(e.target.value);
-    }
 
     const onHandleChange = async (e) => {
         const value = e.target.value;
@@ -92,7 +87,7 @@ export default function NewProductPage() {
         // data.append('file', files);
         data.append('name', product.name);
         data.append('brand', product.brand);
-        data.append('category', category);
+        data.append('category', product.category);
         data.append('description', product.description);
         data.append('price', product.price);
         data.append('countInStock', product.countInStock);
@@ -152,7 +147,7 @@ export default function NewProductPage() {
                                 id="category"
                                 // value={age}
                                 label="Category"
-                                onChange={onCategoryChange}
+                                onChange={onHandleChange}
                                 className={classes.orderTextFields}
                             >
                                 <MenuItem value={'tshirt'} >Tshirt</MenuItem>

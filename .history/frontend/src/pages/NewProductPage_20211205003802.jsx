@@ -64,7 +64,7 @@ export default function NewProductPage() {
 
     }, [files, product]);
 
-    const onCategoryChange = async (e) => {
+    onCategoryChange = async (e) => {
         setCategory(e.target.value);
     }
 
@@ -74,6 +74,7 @@ export default function NewProductPage() {
 
         setProduct({
             ...product,
+            ...category,
           [e.target.name]: value
         });
       };
@@ -92,7 +93,7 @@ export default function NewProductPage() {
         // data.append('file', files);
         data.append('name', product.name);
         data.append('brand', product.brand);
-        data.append('category', category);
+        data.append('category', product.category);
         data.append('description', product.description);
         data.append('price', product.price);
         data.append('countInStock', product.countInStock);
